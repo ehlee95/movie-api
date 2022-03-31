@@ -7,23 +7,23 @@ This REST API is seeded with data from the 7,000 most popular English language f
 #### Available fields:
 - id: TMDB ID
 - title: Movie title
-  overview: Short overview of the movie's plot and premise
-  tagline: Tagline used for marketing
-  genres: Array of applicable movie genres
-  homepage: Movie website
-  release_date: Date of theatrical release
-  revenue: Revenue earned by film
-  budget: Production budget
-  runtime: Length of film in minutes
-  production_companies: Array of companies involved with the production
-  production_countries: Array of countries where movie was filmed
-language: Primary language spoken in the movie
-  spoken_languages: Array of all languages that appear in the movie
-poster_path: Link to full-sized image of movie poster
-  backdrop_path: Link to full-sized backdrop image
-  popularity: Popularity score calculated by TMDB
-  vote_average: Average rating according to TMDB users
-  vote_count: Number of votes received by the film
+- overview: Short overview of the movie's plot and premise
+- tagline: Tagline used for marketing
+- genres: Array of applicable movie genres
+- homepage: Movie website
+- release_date: Date of theatrical release
+- revenue: Revenue earned by film
+- budget: Production budget
+- runtime: Length of film in minutes
+- production_companies: Array of companies involved with the production
+- production_countries: Array of countries where movie was filmed
+- language: Primary language spoken in the movie
+- spoken_languages: Array of all languages that appear in the movie
+- poster_path: Link to full-sized image of movie poster
+- backdrop_path: Link to full-sized backdrop image
+- popularity: Popularity score calculated by TMDB
+- vote_average: Average rating according to TMDB users
+- vote_count: Number of votes received by the film
 
 # Paths
 
