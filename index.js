@@ -47,6 +47,16 @@ app.put("/movies/:id", (request, response) => {
   });
 });
 
+// create a movie using JSON from request body (works)
+app.post("/movies/", (request, response) => {
+  let newMovie = request.body;
+  Movie.create(newMovie)
+    .then(() => {
+      response.send("created new movie");
+    })
+    .catch((err) => console.error(err));
+});
+
 // delete a movie by ID (works)
 app.delete("/movies/:id", (request, response) => {
   let tmdbId = request.params.id;
