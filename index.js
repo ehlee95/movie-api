@@ -71,7 +71,13 @@ app.delete("/movies/:id", (request, response) => {
 
 // create server, listen on port 9000
 const PORT = 9000;
-let server = app.listen(PORT);
+let server = app.listen(process.env.PORT || 9000, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
+});
 
 server.on("listening", () => console.log("listening on port " + PORT));
 server.on("error", (error) => console.error("server error", error));
