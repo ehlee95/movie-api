@@ -15,10 +15,5 @@ mongoose.connection.on("error", (error) => console.error("error", error));
 let connectionString = process.env.MONGODB_URI;
 let MONGODB_URI =
   connectionString || `mongodb://localhost:27017/${DATABASE_NAME}`;
-mongoose.connect(
-  MONGODB_URI,
-  mongooseConfig,
-  () => console.log("connected to db"),
-  (err) => console.error(err)
-);
+mongoose.connect(MONGODB_URI, mongooseConfig);
 module.exports = mongoose;
