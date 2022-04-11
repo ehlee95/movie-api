@@ -2,8 +2,10 @@ let connection = require("./connection");
 let mongoose = require("mongoose");
 let express = require("express");
 let Movie = require("./model");
+const cors = require("cors");
 
 let app = express();
+app.use(cors());
 app.use(express.json());
 
 // checks if root endpoint works
