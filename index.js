@@ -16,9 +16,10 @@ app.get("/", (request, response) => {
 // get one by TMDB id (works)
 app.get("/movies/:id", (request, response) => {
   let movieId = request.params.id;
-  Movie.find({ id: movieId }).then((movie) => response.json(movie));
+  Movie.find({ id: movieId })
+    .then((movie) => response.json(movie))
+    .catch((err) => console.error(err));
 });
-
 // get first 20 TMDB records (works)
 app.get("/movies", (request, response) => {
   Movie.find({})
@@ -33,7 +34,8 @@ app.get("/movies", (request, response) => {
 app.get("/ids", (request, response) => {
   Movie.find({})
     .select("title id -_id")
-    .then((results) => response.json(results));
+    .then((results) => response.json(results))
+    .catch((err) => console.error(err));
 });
 
 // update a movie by ID (works)
@@ -41,12 +43,14 @@ app.put("/movies/:id", (request, response) => {
   let tmdbId = request.params.id;
   let newData = request.body;
   console.log(request);
-  Movie.find({ id: tmdbId }).then((result) => {
-    console.log(newData);
-    return Movie.findByIdAndUpdate(result[0]._id, newData, { new: true }).then(
-      () => response.send("Updated")
-    );
-  });
+  Movie.find({ id: tmdbId })
+    .then((result) => {
+      console.log(newData);
+      return Movie.findByIdAndUpdate(result[0]._id, newData, {
+        new: true,
+      }).then(() => response.send("Updated"));
+    })
+    .catch((err) => console.error(err));
 });
 
 // create a movie using JSON from request body (works)
